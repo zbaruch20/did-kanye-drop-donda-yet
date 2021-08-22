@@ -1,0 +1,19 @@
+{
+  "name": "did-kanye-drop-donda-yet",
+  "version": "1.0.0",
+  "description": "Web application that uses Node.js to access the Spotify Web API to determine if Kanye West has released the album DONDA yet.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zbaruch20/did-kanye-drop-donda-yet.git"
+  },
+  "author": "Zach Baruch",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/zbaruch20/did-kanye-drop-donda-yet/issues"
+  },
+  "homepage": "https://github.com/zbaruch20/did-kanye-drop-donda-yet#readme"
+}
