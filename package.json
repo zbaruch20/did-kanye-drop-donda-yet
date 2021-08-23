@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/zbaruch20/did-kanye-drop-donda-yet/issues"
   },
-  "homepage": "https://github.com/zbaruch20/did-kanye-drop-donda-yet#readme"
+  "homepage": "https://github.com/zbaruch20/did-kanye-drop-donda-yet#readme",
+  "devDependencies": {
+    "prettier": "2.3.2",
+    "sass": "^1.38.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security"
+  }
 }
