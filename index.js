@@ -1,8 +1,9 @@
-let http = require('http');
+// Node modules
 let fs = require('fs');
 let sass = require('sass');
 let express = require('express');
 let path = require('path')
+let DondaStatus = require('./public/models/donda-status')
 
 // Fields
 const sass_input_path = 'public/stylesheets/main.scss';
@@ -49,6 +50,11 @@ app.get('/', (req, res) => {
 			res.write('HTML file not found.');
 		} else {
 			res.write(data);
+
+            // Get DONDA status and (for now) display to console
+            let dondaStatus = new DondaStatus();
+            dondaStatus.updateReleased();
+            console.log(dondaStatus.released);
 		}
 		res.end();
 	});
