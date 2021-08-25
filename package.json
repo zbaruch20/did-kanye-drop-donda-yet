@@ -4,7 +4,8 @@
   "description": "Web application that uses Node.js to access the Spotify Web API to determine if Kanye West has released the album DONDA yet.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
