@@ -2,8 +2,8 @@
 let fs = require('fs');
 let sass = require('sass');
 let express = require('express');
-let path = require('path')
-let DondaStatus = require('./public/models/donda-status')
+let path = require('path');
+let DondaStatus = require('./public/models/donda-status');
 
 // Fields
 const sass_input_path = 'public/stylesheets/main.scss';
@@ -16,24 +16,24 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Render sass/scss
 sass.render(
-    {
-        file: sass_input_path,
-        outFile: css_output_path
-    },
-    (err, res) => {
-        if (err) {
-            console.error('Error rendering SCSS:');
-            console.error(err);
-            return;
-        } else {
-            fs.writeFile(css_output_path, res.css, (fs_err) => {
-                if (fs_err) {
-                    console.error('Error writing to CSS file:');
-                    console.error(fs_err);
-                }
-            });
-        }
-    }
+	{
+		file: sass_input_path,
+		outFile: css_output_path
+	},
+	(err, res) => {
+		if (err) {
+			console.error('Error rendering SCSS:');
+			console.error(err);
+			return;
+		} else {
+			fs.writeFile(css_output_path, res.css, (fs_err) => {
+				if (fs_err) {
+					console.error('Error writing to CSS file:');
+					console.error(fs_err);
+				}
+			});
+		}
+	}
 );
 
 // Set up root GET
@@ -51,10 +51,10 @@ app.get('/', (req, res) => {
 		} else {
 			res.write(data);
 
-            // Get DONDA status and (for now) display to console
-            let dondaStatus = new DondaStatus();
-            dondaStatus.updateReleased();
-            console.log(dondaStatus.released);
+			// Get DONDA status and (for now) display to console
+			let dondaStatus = new DondaStatus();
+			dondaStatus.updateReleased();
+			console.log(dondaStatus.released);
 		}
 		res.end();
 	});
@@ -62,5 +62,5 @@ app.get('/', (req, res) => {
 
 // Run server
 app.listen(3000, () => {
-    console.log('UP')
-})
+	console.log('UP');
+});

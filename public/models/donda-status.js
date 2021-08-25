@@ -8,4 +8,4 @@ module.exports = class DondaStatus {
 	updateReleased() {
 		this.released = spotifyApiService.dondaReleased();
 	}
-}
+};
