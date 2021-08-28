@@ -10,7 +10,7 @@ exports.auth_request = (callback) => {
     const secret_key = process.env.SPOTIFY_SECRET_KEY;
 
     // Request options
-    let req_options = {
+    const req_options = {
         host: 'accounts.spotify.com',
         path: '/api/token',
         method: 'POST',
@@ -21,13 +21,14 @@ exports.auth_request = (callback) => {
     };
 
     // Make HTTP request and store response body
-    let auth_req = https.request(req_options, (res) => {
+    const auth_req = https.request(req_options, (res) => {
         let body_str = '';
         res.on('data', (chunk) => {
             body_str += chunk.toString(); // Add chunks to body each time data is received
         });
         res.on('end', () => {
-            callback(JSON.parse(body_str)); // On request end parse this body and perform callback function
+            // On request end parse this body and perform callback on access token
+            callback(JSON.parse(body_str).access_token); 
         });
     });
 
